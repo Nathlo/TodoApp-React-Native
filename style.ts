@@ -15,7 +15,7 @@ import React from 'react'
         marginVertical: 16,
         fontSize: 16,
         fontWeight: '900',
-        color: 'blue',
+        color: 'purple',
     },
 
     input: {
