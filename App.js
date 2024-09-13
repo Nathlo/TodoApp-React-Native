@@ -6,6 +6,7 @@ import { styles } from './style'
 
 const App = () => {
   const [task, setTask] = useState('');
+  const [tasks, setTasks] = useState([]);
 
   return (
 
@@ -29,7 +30,23 @@ const App = () => {
           Ajoutez une tâche
       </Button>
 
-      
+      <FlatList 
+        data={task}
+        keyExtractor={ (item) => item.id.toString() }
+        renderItem={ ({item}) => (
+          <List.Item  
+            title={item.name}
+            right={ () => (
+              <Icon  
+                name="delete"
+                size={24}
+                color="red"
+                onPress={ () => deleteTask(item.id)}
+              />
+            )}
+          />
+        )}
+      />
     </SafeAreaView>
 
 
