@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, FlatList } from 'react-native'
+import { Text, SafeAreaView, FlatList } from 'react-native'
 import React, { useState } from 'react'
 import { Button, TextInput } from 'react-native-paper'
 import { styles } from './style'
@@ -7,6 +7,17 @@ import { styles } from './style'
 const App = () => {
   const [task, setTask] = useState('');
   const [tasks, setTasks] = useState([]);
+
+  const addTask = () => {
+    if (task.length > 0) {
+      setTasks([...tasks, { id: tasks.length + 1, name: task }]);
+      setTask('');
+    }
+  }
+
+  const deleteTask = (id) => {
+    setTasks(tasks.filter( (task) => task.id !== id));
+  }
 
   return (
 
@@ -48,9 +59,7 @@ const App = () => {
         )}
       />
     </SafeAreaView>
-
-
-  )
-}
+  );
+};
 
 export default App

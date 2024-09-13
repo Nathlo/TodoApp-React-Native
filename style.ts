@@ -1,6 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-
+import { StyleSheet } from 'react-native'
 
  export const styles = StyleSheet.create({
 
@@ -25,6 +23,4 @@ import React from 'react'
     addButtton: {
         marginBottom: 16,
     },
-
-
 });
