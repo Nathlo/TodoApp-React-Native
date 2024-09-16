@@ -95,7 +95,7 @@ const App = () => {
                 />
               ) : (
                 <Icon  
-                  name="delete"
+                  name="check-circle"
                   size={24}
                   color="gray"
                 />
